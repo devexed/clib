@@ -19,24 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\array.c" />
-    <ClCompile Include="src\buffer.c" />
-    <ClCompile Include="src\hashtable.c" />
-    <ClCompile Include="src\sparsearray.c" />
-    <ClCompile Include="src\string.c" />
+    <ClCompile Include="src\clib\array.c" />
+    <ClCompile Include="src\clib\buffer.c" />
+    <ClCompile Include="src\clib\hashtable.c" />
+    <ClCompile Include="src\clib\sparsearray.c" />
+    <ClCompile Include="src\clib\string.c" />
     <ClCompile Include="test\main.c" />
     <ClCompile Include="$(UTF8PROC_INCLUDE)\utf8proc.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\array.h" />
-    <ClInclude Include="src\buffer.h" />
-    <ClInclude Include="src\buffer_typed.h" />
-    <ClInclude Include="src\debug.h" />
-    <ClInclude Include="src\hashtable.h" />
-    <ClInclude Include="src\hashtable_typed.h" />
-    <ClInclude Include="src\sparsearray.h" />
-    <ClInclude Include="src\test.h" />
-    <ClInclude Include="src\string.h" />
+    <ClInclude Include="src\clib\array.h" />
+    <ClInclude Include="src\clib\buffer.h" />
+    <ClInclude Include="src\clib\buffer_typed.h" />
+    <ClInclude Include="src\clib\debug.h" />
+    <ClInclude Include="src\clib\hashtable.h" />
+    <ClInclude Include="src\clib\hashtable_typed.h" />
+    <ClInclude Include="src\clib\sparsearray.h" />
+    <ClInclude Include="src\clib\test.h" />
+    <ClInclude Include="src\clib\string.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

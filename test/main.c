@@ -2,14 +2,14 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
-#include "../src/debug.h"
-#include "../src/test.h"
-#include "../src/string.h"
-#include "../src/buffer.h"
-#include "../src/buffer_typed.h"
-#include "../src/sparsearray.h"
-#include "../src/hashtable.h"
-#include "../src/hashtable_typed.h"
+#include "../src/clib/debug.h"
+#include "../src/clib/test.h"
+#include "../src/clib/string.h"
+#include "../src/clib/buffer.h"
+#include "../src/clib/buffer_typed.h"
+#include "../src/clib/sparsearray.h"
+#include "../src/clib/hashtable.h"
+#include "../src/clib/hashtable_typed.h"
 
 test buffer_test() {
     buffer b;
