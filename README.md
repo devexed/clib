@@ -1,6 +1,4 @@
 # clib
-Utility library for C projects
-
 Experimental C-library for debugging, testing, and datastructures. Contents so far:  
 
 * Debug macros
