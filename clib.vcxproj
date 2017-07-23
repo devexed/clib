@@ -24,7 +24,7 @@
     <ClCompile Include="src\buffer.c" />
     <ClCompile Include="src\hashtable.c" />
     <ClCompile Include="src\sparsearray.c" />
-    <ClCompile Include="src\utf8string.c" />
+    <ClCompile Include="src\string.c" />
     <ClCompile Include="test\main.c" />
   </ItemGroup>
   <ItemGroup>
@@ -37,10 +37,13 @@
     <ClInclude Include="src\hashtable_typed.h" />
     <ClInclude Include="src\sparsearray.h" />
     <ClInclude Include="src\test.h" />
-    <ClInclude Include="src\utf8string.h" />
+    <ClInclude Include="src\string.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="lib\utf8proc_data.c.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

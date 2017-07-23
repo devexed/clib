@@ -1,6 +1,6 @@
 #include <string.h>
 #include <assert.h>
-#include "utf8string.h"
+#include "string.h"
 #include "debug.h"
 
 string * string_empty() {
