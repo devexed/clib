@@ -4,9 +4,9 @@
 #include <stdbool.h>
 
 typedef struct {
-	size_t capacity;
-	size_t size;
-	uint8_t data[];
+    size_t capacity;
+    size_t size;
+    uint8_t data[];
 } array;
 
 array * array_create(size_t capacity);

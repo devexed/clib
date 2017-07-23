@@ -28,12 +28,12 @@ size_t hashtable_bucket_count(hashtable *h) {
 }
 
 bool hashtable_put(hashtable *h,
-                   uint64_t (*hash)(void *),
-                   bool (*equals)(void *, void *),
-                   void *key,
-                   size_t key_size,
-                   void *value,
-                   size_t value_size) {
+    uint64_t(*hash)(void *),
+    bool(*equals)(void *, void *),
+    void *key,
+    size_t key_size,
+    void *value,
+    size_t value_size) {
     assert(key != NULL);
     assert(value != NULL);
     uint64_t key_hash = hash(key);
@@ -46,8 +46,8 @@ bool hashtable_put(hashtable *h,
     }
 
     for (size_t offset = 0, l = buffer_size(entries);
-         offset < l;
-         offset += entry_size) {
+        offset < l;
+        offset += entry_size) {
         uint8_t *bucket_entry_key = buffer_get(entries, offset);
         uint8_t *bucket_entry_value = bucket_entry_key + key_size;
 
@@ -69,11 +69,11 @@ bool hashtable_put(hashtable *h,
 }
 
 bool hashtable_remove(hashtable *h,
-                      uint64_t (*hash)(void *),
-                      bool (*equals)(void *, void *),
-                      void *key,
-                      size_t key_size,
-                      size_t value_size) {
+    uint64_t(*hash)(void *),
+    bool(*equals)(void *, void *),
+    void *key,
+    size_t key_size,
+    size_t value_size) {
     assert(key != NULL);
     uint64_t key_hash = hash(key);
     size_t entry_size = key_size + value_size;
@@ -82,8 +82,8 @@ bool hashtable_remove(hashtable *h,
     if (entries == NULL) return true;
 
     for (size_t offset = 0, l = buffer_size(entries);
-         offset < l;
-         offset += entry_size) {
+        offset < l;
+        offset += entry_size) {
         uint8_t *bucket_entry_key = buffer_get(entries, offset);
 
         if (equals(key, bucket_entry_key)) {
@@ -106,11 +106,11 @@ bool hashtable_remove(hashtable *h,
 }
 
 void * hashtable_get_entry(hashtable *h,
-                       uint64_t (*hash)(void *),
-                       bool (*equals)(void *, void *),
-                       void *key,
-                       size_t key_size,
-                       size_t value_size) {
+    uint64_t(*hash)(void *),
+    bool(*equals)(void *, void *),
+    void *key,
+    size_t key_size,
+    size_t value_size) {
     assert(key != NULL);
     uint64_t key_hash = hash(key);
     buffer *entries = sparsearray_get(h, key_hash, sizeof(buffer));
@@ -120,8 +120,8 @@ void * hashtable_get_entry(hashtable *h,
     size_t entry_size = key_size + value_size;
 
     for (size_t offset = 0, l = buffer_size(entries);
-         offset < l;
-         offset += entry_size) {
+        offset < l;
+        offset += entry_size) {
         uint8_t *bucket_entry = buffer_get(entries, offset);
 
         if (equals(key, bucket_entry)) return bucket_entry;
@@ -131,11 +131,11 @@ void * hashtable_get_entry(hashtable *h,
 }
 
 void * hashtable_get(hashtable *h,
-                     uint64_t (*hash)(void *),
-                     bool (*equals)(void *, void *),
-                     void *key,
-                     size_t key_size,
-                     size_t value_size) {
+    uint64_t(*hash)(void *),
+    bool(*equals)(void *, void *),
+    void *key,
+    size_t key_size,
+    size_t value_size) {
     uint8_t *entry = hashtable_get_entry(h, hash, equals, key, key_size, value_size);
 
     if (entry == NULL) return NULL;
@@ -186,12 +186,12 @@ bool hashtable_iterate_next(hashtable_iterator *it, size_t key_size, size_t valu
 
 void * hashtable_iterate_key(hashtable_iterator *it) {
     assert(it->entries != NULL);
-    
+
     return buffer_get(it->entries, it->entry_offset);
 }
 
 void * hashtable_iterate_value(hashtable_iterator *it, size_t key_size) {
     assert(it->entries != NULL);
-    
+
     return (uint8_t *) buffer_get(it->entries, it->entry_offset) + key_size;
 }

@@ -76,33 +76,18 @@
 
 #include <stdlib.h>
 #include <sys/types.h>
-#ifdef _MSC_VER
-typedef signed char utf8proc_int8_t;
-typedef unsigned char utf8proc_uint8_t;
-typedef short utf8proc_int16_t;
-typedef unsigned short utf8proc_uint16_t;
-typedef int utf8proc_int32_t;
-#  ifdef _WIN64
-typedef __int64 utf8proc_ssize_t;
-#  else
-typedef int utf8proc_ssize_t;
-#  endif
-#  ifndef __cplusplus
-typedef unsigned char utf8proc_bool;
-enum {false, true};
-#  else
-typedef bool utf8proc_bool;
-#  endif
-#else
-#  include <stdbool.h>
-#  include <inttypes.h>
+#include <stdbool.h>
+#include <inttypes.h>
 typedef int8_t utf8proc_int8_t;
 typedef uint8_t utf8proc_uint8_t;
 typedef int16_t utf8proc_int16_t;
 typedef uint16_t utf8proc_uint16_t;
 typedef int32_t utf8proc_int32_t;
-typedef ssize_t utf8proc_ssize_t;
 typedef bool utf8proc_bool;
+#ifdef _MSC_VER
+typedef int utf8proc_ssize_t;
+#else
+typedef ssize_t utf8proc_ssize_t;
 #endif
 #include <limits.h>
 
@@ -110,7 +95,7 @@ typedef bool utf8proc_bool;
 #  ifdef UTF8PROC_EXPORTS
 #    define UTF8PROC_DLLEXPORT __declspec(dllexport)
 #  else
-#    define UTF8PROC_DLLEXPORT __declspec(dllimport)
+#    define UTF8PROC_DLLEXPORT
 #  endif
 #elif __GNUC__ >= 4
 #  define UTF8PROC_DLLEXPORT __attribute__ ((visibility("default")))

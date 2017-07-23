@@ -2,14 +2,14 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
-#include "../source/debug.h"
-#include "../source/test.h"
-#include "../source/utf8string.h"
-#include "../source/buffer.h"
-#include "../source/buffer_typed.h"
-#include "../source/sparsearray.h"
-#include "../source/hashtable.h"
-#include "../source/hashtable_typed.h"
+#include "../src/debug.h"
+#include "../src/test.h"
+#include "../src/utf8string.h"
+#include "../src/buffer.h"
+#include "../src/buffer_typed.h"
+#include "../src/sparsearray.h"
+#include "../src/hashtable.h"
+#include "../src/hashtable_typed.h"
 
 test buffer_test() {
     buffer b;
@@ -77,7 +77,7 @@ test buffer_typed_test() {
         expect(*n == 99 - i, "Unexpected value");
     }
 
-    buffer_destroy(&b);
+    buffer_destroy_long(&b);
     succeed;
 }
 
@@ -215,7 +215,7 @@ test hashtable_typed_test() {
         expect(*value == 2 * (100 - (*key - 65)), "Unexpected value");
     }
 
-    hashtable_destroy(&h);
+    hashtable_destroy_ci(&h);
     succeed;
 }
 
@@ -248,7 +248,7 @@ test string_test() {
     succeed;
 }
 
-void test_utils_all() {
+int main() {
     tests_start("Utilities");
     test_run(buffer_test);
     test_run(buffer_typed_test);
@@ -257,4 +257,7 @@ void test_utils_all() {
     test_run(hashtable_typed_test);
     test_run(string_test);
     tests_finish;
+    getchar();
+
+    return EXIT_SUCCESS;
 }

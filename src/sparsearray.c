@@ -118,7 +118,7 @@ bool sparsearray_remove(sparsearray *s, uint64_t key, size_t value_size) {
     if (*skey != key) return false;
 
     return buffer_remove(&s->keys, offset, sizeof(uint64_t))
-            && buffer_remove(&s->values, index * value_size, value_size);
+        && buffer_remove(&s->values, index * value_size, value_size);
 }
 
 void * sparsearray_get(sparsearray *s, uint64_t key, size_t value_size) {
@@ -128,7 +128,7 @@ void * sparsearray_get(sparsearray *s, uint64_t key, size_t value_size) {
     if (offset >= buffer_size(&s->keys)) return NULL;
 
     uint64_t *skey = buffer_get(&s->keys, offset);
-    
+
     if (*skey != key) return NULL;
 
     return buffer_get(&s->values, index * value_size);

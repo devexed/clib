@@ -39,7 +39,7 @@ array * array_trim(array *s) {
             s->capacity = s->size;
         }
     }
-    
+
     return s;
 }
 
@@ -75,7 +75,7 @@ array * array_insert(array *s, size_t offset, size_t bytes_size, uint8_t *bytes)
     if (s != NULL) {
         // Push data after offset forward.
         memmove(s->data + offset + bytes_size, s->data + offset, s->size - offset);
-        
+
         // Copy new data into array.
         // Unable to use memcpy as the bytes argument might point into the
         // data array.

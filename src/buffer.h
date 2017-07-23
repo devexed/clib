@@ -31,8 +31,8 @@ void * buffer_resize(buffer *, size_t, size_t, size_t);
 
 bool buffer_remove(buffer *, size_t, size_t);
 
-void * buffer_get(buffer *, size_t); 
+void * buffer_get(buffer *, size_t);
 
-bool buffer_push_buffer(buffer *, buffer *); 
+bool buffer_push_buffer(buffer *, buffer *);
 
 #endif

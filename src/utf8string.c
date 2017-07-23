@@ -4,7 +4,7 @@
 #include "debug.h"
 
 string * string_empty() {
-    return array_create(sizeof (uint8_t) * 16);
+    return array_create(sizeof(uint8_t) * 16);
 }
 
 string * string_create(size_t capacity) {
@@ -51,16 +51,17 @@ string * string_append_chars(string *s, size_t utf8_chars_size, uint8_t *utf8_ch
         sizeof(utf8proc_int32_t) + 1;
     size_t original_size = string_size(s);
     string *new_string = array_accomodate(s, original_size + append_codepoints_size);
-    
+
     if (new_string == NULL) return NULL;
 
     // Decompose the 32 bit codepoints directly into the string.
-    utf8proc_int32_t* decomposed_codepoints = new_string->data + original_size;
+    utf8proc_int32_t *decomposed_codepoints =
+        (utf8proc_int32_t *) (new_string->data + original_size);
     utf8proc_ssize_t decomposed_codepoint_count = utf8proc_decompose(
         utf8_chars, utf8_chars_size,
         decomposed_codepoints, append_codepoints_size,
         options);
-    
+
     // Error while decomposing.
     if (decomposed_codepoint_count < 0)
         return NULL;

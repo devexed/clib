@@ -101,7 +101,7 @@ void * buffer_get(buffer *b, size_t data_offset) {
     assert(data_offset < b->size);
 
     return b->data + data_offset;
-} 
+}
 
 bool buffer_push_buffer(buffer *target, buffer *source) {
     size_t size = buffer_size(source);
@@ -111,7 +111,7 @@ bool buffer_push_buffer(buffer *target, buffer *source) {
 
     void *source_data = buffer_get(source, 0);
     memmove(target_data, source_data, size);
-    
+
     return true;
 }
 
