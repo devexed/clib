@@ -4,7 +4,7 @@
 #include <string.h>
 #include "../src/debug.h"
 #include "../src/test.h"
-#include "../src/utf8string.h"
+#include "../src/string.h"
 #include "../src/buffer.h"
 #include "../src/buffer_typed.h"
 #include "../src/sparsearray.h"

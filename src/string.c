@@ -1,5 +1,6 @@
 #include <string.h>
 #include <assert.h>
+#include <utf8proc.h>
 #include "string.h"
 #include "debug.h"
 

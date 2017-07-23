@@ -19,16 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lib\utf8proc.c" />
     <ClCompile Include="src\array.c" />
     <ClCompile Include="src\buffer.c" />
     <ClCompile Include="src\hashtable.c" />
     <ClCompile Include="src\sparsearray.c" />
     <ClCompile Include="src\string.c" />
     <ClCompile Include="test\main.c" />
+    <ClCompile Include="$(UTF8PROC_INCLUDE)\utf8proc.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lib\utf8proc.h" />
     <ClInclude Include="src\array.h" />
     <ClInclude Include="src\buffer.h" />
     <ClInclude Include="src\buffer_typed.h" />
@@ -38,9 +37,6 @@
     <ClInclude Include="src\sparsearray.h" />
     <ClInclude Include="src\test.h" />
     <ClInclude Include="src\string.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="lib\utf8proc_data.c.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -89,9 +85,18 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
-  <ItemDefinitionGroup>
-  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(UTF8PROC_INCLUDE);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(UTF8PROC_INCLUDE);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(UTF8PROC_INCLUDE);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(UTF8PROC_INCLUDE);$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

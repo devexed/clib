@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "../lib/utf8proc.h"
 #include "array.h"
 
 // A string is an array of 8-bit elements in valid utf8.
