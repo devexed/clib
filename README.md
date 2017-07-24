@@ -1,4 +1,4 @@
-# clib
+# vexlib
 Experimental C-library for debugging, testing, and datastructures.
 
 ## Contents
