@@ -19,24 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\clib\array.c" />
-    <ClCompile Include="src\clib\buffer.c" />
-    <ClCompile Include="src\clib\hashtable.c" />
-    <ClCompile Include="src\clib\sparsearray.c" />
-    <ClCompile Include="src\clib\string.c" />
+    <ClCompile Include="src\vex\array.c" />
+    <ClCompile Include="src\vex\buffer.c" />
+    <ClCompile Include="src\vex\hashtable.c" />
+    <ClCompile Include="src\vex\sparsearray.c" />
+    <ClCompile Include="src\vex\string.c" />
     <ClCompile Include="test\main.c" />
-    <ClCompile Include="$(UTF8PROC_INCLUDE)\utf8proc.c" />
+    <ClCompile Include="$(INCLUDE_UTF8PROC)\utf8proc.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\clib\array.h" />
-    <ClInclude Include="src\clib\buffer.h" />
-    <ClInclude Include="src\clib\buffer_typed.h" />
-    <ClInclude Include="src\clib\debug.h" />
-    <ClInclude Include="src\clib\hashtable.h" />
-    <ClInclude Include="src\clib\hashtable_typed.h" />
-    <ClInclude Include="src\clib\sparsearray.h" />
-    <ClInclude Include="src\clib\test.h" />
-    <ClInclude Include="src\clib\string.h" />
+    <ClInclude Include="src\vex\array.h" />
+    <ClInclude Include="src\vex\buffer.h" />
+    <ClInclude Include="src\vex\buffer_typed.h" />
+    <ClInclude Include="src\vex\debug.h" />
+    <ClInclude Include="src\vex\hashtable.h" />
+    <ClInclude Include="src\vex\hashtable_typed.h" />
+    <ClInclude Include="src\vex\sparsearray.h" />
+    <ClInclude Include="src\vex\test.h" />
+    <ClInclude Include="src\vex\string.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -45,6 +45,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{F4F9FEE0-9A26-4253-AE3B-45F03E73ECF2}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <ProjectName>vexlib</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -86,16 +87,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(UTF8PROC_INCLUDE);$(IncludePath)</IncludePath>
+    <IncludePath>$(INCLUDE_UTF8PROC);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(UTF8PROC_INCLUDE);$(IncludePath)</IncludePath>
+    <IncludePath>$(INCLUDE_UTF8PROC);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(UTF8PROC_INCLUDE);$(IncludePath)</IncludePath>
+    <IncludePath>$(INCLUDE_UTF8PROC);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(UTF8PROC_INCLUDE);$(IncludePath)</IncludePath>
+    <IncludePath>$(INCLUDE_UTF8PROC);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

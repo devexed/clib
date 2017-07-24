@@ -2,14 +2,14 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
-#include "../src/clib/debug.h"
-#include "../src/clib/test.h"
-#include "../src/clib/string.h"
-#include "../src/clib/buffer.h"
-#include "../src/clib/buffer_typed.h"
-#include "../src/clib/sparsearray.h"
-#include "../src/clib/hashtable.h"
-#include "../src/clib/hashtable_typed.h"
+#include "../src/vex/debug.h"
+#include "../src/vex/test.h"
+#include "../src/vex/string.h"
+#include "../src/vex/buffer.h"
+#include "../src/vex/buffer_typed.h"
+#include "../src/vex/sparsearray.h"
+#include "../src/vex/hashtable.h"
+#include "../src/vex/hashtable_typed.h"
 
 test buffer_test() {
     buffer b;
